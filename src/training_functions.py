@@ -17,6 +17,11 @@ def load_df(distilbert_filtered_posts_filename, max_length=MAX_THREAD_LEN):
   elif distilbert_filtered_posts_filename.endswith('.pkl'):
       post_df = pd.read_pickle(distilbert_filtered_posts_filename)
       post_df = post_df[['features','score','is_post_author','seq_len','filtered_seqlen']]
+#   post_df = pickle5.load(open(distilbert_filtered_posts_filename,'rb'))
+
+
+  # transform to interval [0,1] NO LONGER
+#   post_df.score = post_df.score.apply(lambda x: [(s+1)/2 for s in x]) 
 
   post_df.features = post_df.apply(
       lambda p:torch.Tensor(np.hstack(

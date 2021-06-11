@@ -15,9 +15,9 @@ The chosen model for extracting the sentiment features from reddit posts and com
 This repository contains four python notebooks, each accomplishing a specific part of the proposed pipeline. We highlight that all the notebooks are already configured for enabling users to reproduce the paper's results. 
 
 * The [REDDIT_SCRAPPER]() notebook downloads the data from a given subreddit using reddit's API. 
-* The [PRE_PROCESSING](PRE_PROCESSING) notebook transforms the data into a single dataframe containing all the information needed for training(VADER's scores, relevant statistics about the threads, etc.)
-* The [PAPER_RESULTS](PAPER_RESULTS) notebook performs the actual training of the model and the analysis of the results.
-* The [REVIEW_EXPERIEMENTS](REVIEW_EXPERIMENTS) notebook is an extra part of the pipeline, that performs confidence interval experiments and other relevant but not essential studies for the model.
+* The [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook transforms the data into a single dataframe containing all the information needed for training(VADER's scores, relevant statistics about the threads, etc.)
+* The [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook performs the actual training of the model and the analysis of the results.
+* The [REVIEW_EXPERIEMENTS](REVIEW_EXPERIMENTS.ipynb) notebook is an extra part of the pipeline, that performs confidence interval experiments and other relevant but not essential studies for the model.
 
 The [Source](src) folder contains the .py files with useful functions and, most importantly, the Pytorch implementation of the model itself. A command-line version of the model will be available in the future, but currently only the used notebooks are available.
 

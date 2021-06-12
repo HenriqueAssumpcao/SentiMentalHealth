@@ -125,7 +125,7 @@ def getKeysByValue(dictOfElements, valueToFind):
             return item[0]
     
 
-def grid_search_xgb(param_grid,early_stop,X_train,y_train,X_val,y_val,n_jobs):
+def grid_search_xgb(param_grid,early_stop,X_train,y_train,X_val,y_val,n_jobs,MODELSDIR):
     params = ['learning_rate','max_depth','min_child_weight','subsample','colsample_bytree','n_estimators','objective']
 
     #obj to int

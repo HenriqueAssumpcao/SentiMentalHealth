@@ -22,11 +22,14 @@ This repository contains four python notebooks, each accomplishing a specific pa
 The [Source](src) folder contains the .py files with useful functions and, most importantly, the Pytorch implementation of the model itself. 
 
 ### Reproducing the Paper results
-
 The main goal of this repository is reproducibility, and so we succinctly describe the pipeline one should follow to reproduce our results.
 1. Run the [REDDIT_SCRAPPER](REDDIT_SCRAPPER.ipynb) notebook. We recoomend running this locally, since Google Colab doesn't handle asynchronous functions all that well. This can take a while since subreddits like r/depression contain a significant amount of threads.
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.
+There are two options for the final step of the pipeline.
+#### Option 1: Training the model from Scratch
 3. Run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook. Unfortunately, since we first obtained the results, Google Colab has reduced the amount of available RAM for free users, and so training the model for all 4 subreddits is not possible for free users of Colab. For this reason, we recommend running this notebook locally, on a machine with GPU support and more than 14GB of RAM. 
+#### Option 2: Loading pre-trained parameters
+3. Load the [pre-trained parameters]() pickle file, which contains the RNN state_dict, and then proceed only to test the model using the downloaded data. We still recommend using a machine with GPU support and more than 14GB of RAM, since Colab may have issues loading all of the subreddits data.
 
 After following these three steps, you will have access to the trained model used in the paper. The [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook automatically generates the results table and performs case studies for specific threads.
 

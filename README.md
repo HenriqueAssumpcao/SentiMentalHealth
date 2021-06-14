@@ -28,7 +28,7 @@ The main goal of this repository is reproducibility, and so we succinctly descri
 There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch
 3. Run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook. Unfortunately, since we first obtained the results, Google Colab has reduced the amount of available RAM for free users, and so training the model for all 4 subreddits is not possible for free users of Colab. For this reason, we recommend running this notebook locally, on a machine with GPU support and more than 14GB of RAM. 
-#### Option 2: Loading pre-trained parameters
+#### Option 2: Loading pre-trained parameters (TODO)
 3. Load the [pre-trained parameters]() pickle file, which contains the RNN state_dict, and then proceed only to test the model using the downloaded data. We still recommend using a machine with GPU support and more than 14GB of RAM, since Colab may have issues loading all of the subreddits data.
 
 After following these three steps, you will have access to the trained model used in the paper. The [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook automatically generates the results table and performs case studies for specific threads.

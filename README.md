@@ -26,4 +26,7 @@ This is research code, expect that it can change and any fitness for a particula
 
 This software is under GNU General Public License Version 3 ([GPLv3](LICENSE)).
 
+## Authors
+Bárbara Silveira, Henrique S. Silva, Fabricio Murai, Ana Paula C. da Silva
+
 <img align="left" width="auto" height="75" src="./assets/ufmg.png">

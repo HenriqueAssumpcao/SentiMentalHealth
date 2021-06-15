@@ -10,6 +10,12 @@ PyTorch implementation of our GRU-based RNN for predicting user emotional tone i
 This repository provides the original implementation of the "Predicting User Emotional Tone in Mental Disorder Online Communities". The paper was published in the [FGCS Special Issue on Sentiment Analysis Systems](https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/special-issue-on-senti-mental-health-future-generation-senti). The paper can also be found on [arXiv](https://arxiv.org/).
 The chosen model for extracting the sentiment features from reddit posts and comments was the [VADER Sentiment Analysis Tool](https://github.com/cjhutto/vaderSentiment).
 
+## About the Dataset
+
+The paper used a dataset comprised of four different subreddits related to mental health issues, namely [r/Anxiety](https://www.reddit.com/r/Anxiety/), [r/bipolar](https://www.reddit.com/r/bipolar/), [r/depression](https://www.reddit.com/r/depression/) and [r/SuicideWatch](https://www.reddit.com/r/SuicideWatch/). The following table provides a detailed statistical description of each.
+
+<img src='assets/dataset.png' align="center" width=750 />
+
 ## Contents and Usage
 
 This repository contains four python notebooks, each accomplishing a specific part of the proposed pipeline. We highlight that all the notebooks are already configured for enabling users to reproduce the paper's results. 

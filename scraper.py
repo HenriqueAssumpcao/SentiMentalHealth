@@ -21,7 +21,7 @@ datadir = os.getcwd() + "/data/"
 
 
 dt_curr = int(datetime.datetime(2017,1,1,0,0).timestamp())
-dt_last = int(datetime.datetime(2017, 1,2,0,0).timestamp())
+dt_last = int(datetime.datetime(2018,1,1,0,0).timestamp())
 post_endpoint=' https://api.pushshift.io/reddit/search/submission/'
 post_parameters = {
     'after': dt_curr,

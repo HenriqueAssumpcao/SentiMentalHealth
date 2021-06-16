@@ -31,7 +31,7 @@ The [Source](src) folder contains the .py files with useful functions and, most 
 The main goal of this repository is reproducibility, and so we succinctly describe the pipeline one should follow to reproduce our results.
 1. Run the [REDDIT_SCRAPPER](REDDIT_SCRAPPER.ipynb) notebook. We recommend running this locally, since Google Colab doesn't handle asynchronous functions all that well. This can take a while since subreddits like r/depression contain a significant amount of threads.
 
-    *Alternatively*, you can download the compressed dataset files from the authors' OneCloud drives:
+    *Alternatively*, you can download the compressed dataset files from the authors' OneCloud drive:
     * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdcIY6UHxPZIhr9sszKIk_8BFV21SzVQYjmdDJWyvKTdtw?e=eEr8lR)
     * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/Ed6UrGbsGK9AhFgSxFfYum0BFoz_GPaN3_H1D6PRpD9hSw?e=bu80dW)
     * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/Eedv1m0ihBBGq9kvxDJCHWUBqVVQYyqEGda7yduI9udc2w?e=I9Phj0)
@@ -41,6 +41,14 @@ The main goal of this repository is reproducibility, and so we succinctly descri
 
 
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.
+
+    *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive:
+    * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/ES7frsbOfQpMvWj3wRofBy8BVf4UAUI82O9hXx9lWWlHFQ?e=qPFLXe)
+    * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EUAaBkjUgDdMpLZ4gblu4agBs5OQtnbxJ4r1dTVk6vQtEw?e=FdqRJd)
+    * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdTTKqtaD4RLvY0CkmeLW4sBOveI1ON4nDCzl6PLlwZ-vA?e=VCS42j)
+    * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EWk-z_V1RrRLtCrtvz8M0RcB03aVzrWkjHGX4nMTf-o0-g?e=MIGpvG)
+
+    Do NOT forget to save the .parquet files to a folder named 'data'.
 
 There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch

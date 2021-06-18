@@ -37,7 +37,7 @@ The main goal of this repository is reproducibility, and so we succinctly descri
     * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/Eedv1m0ihBBGq9kvxDJCHWUBqVVQYyqEGda7yduI9udc2w?e=I9Phj0)
     * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EYvlqWc21kVHlQL2l7qObQEB5913RyufIFPzgHxfOtWpkw?e=bedSIT)
 
-    Do NOT forget to uncompress and save the .pkl files to a folder named 'data'.
+    Do NOT forget to uncompress and save the files to a folder named 'data'. If downloading the .parquet files(recommended if working with limited RAM), remember to configure the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook accordingly, i.e., set ```EXTENSION = ".parquet"```.
 
 
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.

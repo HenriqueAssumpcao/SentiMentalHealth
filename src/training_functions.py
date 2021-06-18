@@ -1,6 +1,7 @@
 import pickle
 import numpy as np 
 import torch 
+import copy
 import pandas as pd 
 from sklearn.model_selection import train_test_split
 import torch.nn as nn 
@@ -10,13 +11,13 @@ from .utils import reset_seeds, evaluate, train_over_nepochs
 
 MAX_THREAD_LEN = 64 
 def load_df(distilbert_filtered_posts_filename, max_length=MAX_THREAD_LEN):
-  
+  columns = ['features','score','is_post_author','seq_len','filtered_seqlen','comments']
   print(f'Loading {distilbert_filtered_posts_filename}...')
   if distilbert_filtered_posts_filename.endswith('.parquet'):
-      post_df = pd.read_parquet(distilbert_filtered_posts_filename, columns=['features','score','is_post_author','seq_len','filtered_seqlen'])
+      post_df = pd.read_parquet(distilbert_filtered_posts_filename, columns=columns)
   elif distilbert_filtered_posts_filename.endswith('.pkl'):
       post_df = pd.read_pickle(distilbert_filtered_posts_filename)
-      post_df = post_df[['features','score','is_post_author','seq_len','filtered_seqlen']]
+      post_df = post_df[columns]
 
   post_df.features = post_df.apply(
       lambda p:torch.Tensor(np.hstack(
@@ -45,7 +46,7 @@ def get_znorm_params(post_df):
   src_s = torch.Tensor(np.std (src,axis=0, keepdims=True))
   return src_m, src_s
 
-def split_indices(post_df):
+def split_indices(post_df, STRATIFIED, MIN_VALUE, BIN_WIDTH):
   
     nthreads = len(post_df)     # number of threads
     if STRATIFIED:
@@ -95,7 +96,7 @@ def get_subreddit_range(post_df):
   return subreddit2range  
 
 # baseline "no changes"
-def get_baselines_df(test_loader):
+def get_baselines_df(test_loader, score_s, score_m):
 
   batch = next(iter(test_loader))
   inds = batch[3].cpu().numpy()

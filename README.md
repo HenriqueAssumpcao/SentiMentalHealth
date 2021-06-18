@@ -45,7 +45,7 @@ The main goal of this repository is reproducibility, and so we succinctly descri
     *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive:
     * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/ES7frsbOfQpMvWj3wRofBy8BVf4UAUI82O9hXx9lWWlHFQ?e=NjgLEa)
     * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EUAaBkjUgDdMpLZ4gblu4agBs5OQtnbxJ4r1dTVk6vQtEw?e=u3I5La)
-    * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdTTKqtaD4RLvY0CkmeLW4sBOveI1ON4nDCzl6PLlwZ-vA?e=VCS42j)
+    * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdTTKqtaD4RLvY0CkmeLW4sBOveI1ON4nDCzl6PLlwZ-vA?e=NoeqkL)
     * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EWk-z_V1RrRLtCrtvz8M0RcB03aVzrWkjHGX4nMTf-o0-g?e=MIGpvG)
 
     Do NOT forget to save the .parquet files to a folder named 'data'.

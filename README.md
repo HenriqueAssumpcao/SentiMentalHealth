@@ -43,8 +43,8 @@ The main goal of this repository is reproducibility, and so we succinctly descri
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.
 
     *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive:
-    * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/ES7frsbOfQpMvWj3wRofBy8BVf4UAUI82O9hXx9lWWlHFQ?e=qPFLXe)
-    * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EUAaBkjUgDdMpLZ4gblu4agBs5OQtnbxJ4r1dTVk6vQtEw?e=FdqRJd)
+    * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/ES7frsbOfQpMvWj3wRofBy8BVf4UAUI82O9hXx9lWWlHFQ?e=NjgLEa)
+    * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EUAaBkjUgDdMpLZ4gblu4agBs5OQtnbxJ4r1dTVk6vQtEw?e=u3I5La)
     * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdTTKqtaD4RLvY0CkmeLW4sBOveI1ON4nDCzl6PLlwZ-vA?e=VCS42j)
     * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EWk-z_V1RrRLtCrtvz8M0RcB03aVzrWkjHGX4nMTf-o0-g?e=MIGpvG)
 
@@ -54,7 +54,7 @@ There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch
 3. Run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook. Unfortunately, since we first obtained the results, Google Colab has reduced the amount of available RAM for free users, and so training the model for all 4 subreddits is not currently possible in the free version of Colab. For this reason, we recommend running this notebook locally, on a machine with GPU support and more than 14GB of RAM. 
 #### Option 2: Loading pre-trained parameters (TODO)
-3. Load the [pre-trained parameters]() pickle file, which contains the RNN state_dict, and then proceed only to test the model using the downloaded data. We still recommend using a machine with GPU support and more than 14GB of RAM, since Colab may have issues loading all of the subreddits data.
+3. Download the [pre-trained parameters]() pickle file from [pre-trained](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EfRaMTg0udxIgByhK8FmiHIBKZkJwk7NJcicoNKL2oV1AA?e=etRPcX) and save it to a folder named 'results'. This file contains the RNN state_dict, and then proceed only to test the model using the downloaded data. We still recommend using a machine with GPU support and more than 14GB of RAM, since Colab may have issues loading all of the subreddits data.
 
 After following these three steps, you will have access to the trained model used in the paper. The [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook automatically generates the results table and performs case studies for specific threads.
 

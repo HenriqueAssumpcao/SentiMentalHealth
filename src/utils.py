@@ -367,7 +367,7 @@ def extractFeatures(df, tokenizer, model, device, batch_size = 1024, max_paragra
 
     tokenized = batch['text'].apply((lambda x: tokenizer.encode(
         x[:max_paragraph_length], add_special_tokens=True, max_length=max_paragraph_length,
-        truncate=True,
+        truncation=True,
         )))
     padded = np.array([i + [0]*(max_paragraph_length-len(i)) for i in tokenized.values])
     attention_mask = np.where(padded != 0, 1, 0)

@@ -27,7 +27,7 @@ This repository contains four python notebooks, each accomplishing a specific pa
 
 The [Source](src) folder contains the .py files with useful functions and, most importantly, the Pytorch implementation of the model itself. 
 
-### Reproducing the Paper results
+### Reproducing the Paper's results
 The main goal of this repository is reproducibility, and so we succinctly describe the pipeline one should follow to reproduce our results.
 1. Run the [REDDIT_SCRAPPER](REDDIT_SCRAPPER.ipynb) notebook. We recommend running this locally, since Google Colab doesn't handle asynchronous functions all that well. This can take a while since subreddits like r/depression contain a significant amount of threads.
 

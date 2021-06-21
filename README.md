@@ -31,13 +31,9 @@ The [Source](src) folder contains the .py files with useful functions and, most 
 The main goal of this repository is reproducibility, and so we succinctly describe the pipeline one should follow to reproduce our results.
 1. Run the [REDDIT_SCRAPPER](REDDIT_SCRAPPER.ipynb) notebook. We recommend running this locally, since Google Colab doesn't handle asynchronous functions all that well. This can take a while since subreddits like r/depression contain a significant amount of threads.
 
-    *Alternatively*, you can download the compressed dataset files from the authors' OneCloud drive:
-    * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdcIY6UHxPZIhr9sszKIk_8BFV21SzVQYjmdDJWyvKTdtw?e=eEr8lR)
-    * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/Ed6UrGbsGK9AhFgSxFfYum0BFoz_GPaN3_H1D6PRpD9hSw?e=bu80dW)
-    * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/Eedv1m0ihBBGq9kvxDJCHWUBqVVQYyqEGda7yduI9udc2w?e=I9Phj0)
-    * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EYvlqWc21kVHlQL2l7qObQEB5913RyufIFPzgHxfOtWpkw?e=bedSIT)
+    *Alternatively*, you can download the compressed dataset files from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EdpEiTk1s7pNuFAN-rRJGbMBERrmJbAFEVfAieHMXFeDcA?e=J095HS).
 
-    Do NOT forget to uncompress and save the files to a folder named 'data'. If downloading the .parquet files(recommended if working with limited RAM), remember to configure the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook accordingly, i.e., set ```EXTENSION = ".parquet"```.
+    Do NOT forget to maintain the directory structure of the zip file, i.e., keep all the .pkl files in the 'data' directory.
 
 
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.
@@ -48,7 +44,7 @@ The main goal of this repository is reproducibility, and so we succinctly descri
     * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdTTKqtaD4RLvY0CkmeLW4sBOveI1ON4nDCzl6PLlwZ-vA?e=NoeqkL)
     * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EWk-z_V1RrRLtCrtvz8M0RcB03aVzrWkjHGX4nMTf-o0-g?e=PKn30D)
 
-    Do NOT forget to save the .parquet files to a folder named 'data'.
+    Do NOT forget to save the .parquet files to a folder named 'data' and to configure the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook accordingly, i.e., set ```EXTENSION = ".parquet"```.
 
 There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch

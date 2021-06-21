@@ -38,27 +38,24 @@ The main goal of this repository is reproducibility, and so we succinctly descri
 
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.
 
-    *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive:
-    * [r/Anxiety](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/ES7frsbOfQpMvWj3wRofBy8BVf4UAUI82O9hXx9lWWlHFQ?e=NjgLEa)
-    * [r/bipolar](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EUAaBkjUgDdMpLZ4gblu4agBs5OQtnbxJ4r1dTVk6vQtEw?e=u3I5La)
-    * [r/depression](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EdTTKqtaD4RLvY0CkmeLW4sBOveI1ON4nDCzl6PLlwZ-vA?e=NoeqkL)
-    * [r/SuicideWatch](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EWk-z_V1RrRLtCrtvz8M0RcB03aVzrWkjHGX4nMTf-o0-g?e=PKn30D)
+    *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EaccySJRWndBnQ-trdbBGKgB9BSmrgA6wRy_7EFE8pTGjw?e=sUtAMQ).
 
-    Do NOT forget to save the .parquet files to a folder named 'data' and to configure the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook accordingly, i.e., set ```EXTENSION = ".parquet"```.
+    Do NOT forget to maintain the directory structure of the zip file, i.e., keep all the .pkl files in the 'data' directory, and to configure the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook accordingly, i.e., set ```EXTENSION = ".parquet"```.
 
 There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch
 3. Run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook. Unfortunately, since we first obtained the results, Google Colab has reduced the amount of available RAM for free users, and so training the model for all 4 subreddits is not currently possible in the free version of Colab. For this reason, we recommend running this notebook locally, on a machine with GPU support and more than 14GB of RAM. 
 #### Option 2: Loading pre-trained parameters (TODO)
-3. Download the [pre-trained parameters]() pickle file from [pre-trained](https://ufmgbr-my.sharepoint.com/:u:/g/personal/murai_ufmg_br/EfRaMTg0udxIgByhK8FmiHIBKZkJwk7NJcicoNKL2oV1AA?e=etRPcX).
+3. Download the pre-trained parameters pickle file from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EeaIK3iK2nlJgQxAIYfesGABFwuYyvAFlgZ78Q7mr9sd7w?e=BBPzuy) and then run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook in testing mode, i.e., set the variables ```TEST = True``` and ```TRAIN = False```.
 
-Do NOT forget to save the .pkl file to to a folder named 'results'.
+Do NOT forget to maintain the directory structure of the zip file, i.e., keep the .pkl file in the 'results' directory.
 
 This file contains the RNN state_dict, and then proceed only to test the model using the downloaded data. We still recommend using a machine with GPU support and more than 14GB of RAM, since Colab may have issues loading all of the subreddits data.
 
 After following these three steps, you will have access to the trained model used in the paper. The [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook automatically generates the results table and performs case studies for specific threads.
 
-A command-line version of the model will be available in the future, but currently only the used notebooks are available.
+## Future Features \& Questions
+We plan to release a command-line version of the model in the future for easier and more general use, but currently the aforementioned pipeline has to be followed in order to use the model. If you have any suggestions or questions about the paper and/or about the repository itself, feel free to contact us via [email](mailto:henriquesoares@dcc.ufmg.br?subject=FGCS%3A%20%22Predicting%20User%20Emotional%20Tone%20in%20Mental%20Disorder%20Online%20Communities%22). 
 
 ## License \& Disclaimer
 This is research code, expect that it can change and any fitness for a particular purpose is disclaimed.

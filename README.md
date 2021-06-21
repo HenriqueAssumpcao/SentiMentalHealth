@@ -55,7 +55,7 @@ This file contains the RNN state_dict, and then proceed only to test the model u
 After following these three steps, you will have access to the trained model used in the paper. The [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook automatically generates the results table and performs case studies for specific threads.
 
 ## Future Features \& Questions
-We plan to release a command-line version of the model in the future for easier and more general use, but currently the aforementioned pipeline has to be followed in order to use the model. If you have any suggestions or questions about the paper and/or about the repository itself, feel free to contact us via [email](mailto:henriquesoares@dcc.ufmg.br?subject=FGCS%3A%20%22Predicting%20User%20Emotional%20Tone%20in%20Mental%20Disorder%20Online%20Communities%22). 
+We plan to release a command-line version of the model in the future for easier and more general use, but currently the aforementioned pipeline has to be followed in order to use the model. If you have any suggestions or questions about the paper and/or about the repository itself, feel free to contact us at [henriquesoares@dcc.ufmg.br](mailto:henriquesoares@dcc.ufmg.br?subject=FGCS%3A%20%22Predicting%20User%20Emotional%20Tone%20in%20Mental%20Disorder%20Online%20Communities%22). 
 
 ## License \& Disclaimer
 This is research code, expect that it can change and any fitness for a particular purpose is disclaimed.

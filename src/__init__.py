@@ -1,5 +1,3 @@
-from . import attention 
-# from . import get_sequences
 from . import linear
 from . import models 
 from . import pytorchtools 

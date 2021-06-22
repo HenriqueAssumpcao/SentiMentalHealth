@@ -152,7 +152,7 @@ class WeightedMSELoss(torch.nn.Module):
     weights = self.bin_weights[((targets - self.min_value)/self.bin_width).floor().long()]
     return (losses*weights).mean()
 
-# TODO: delete code for plotting
+
 def grid_search_train(train_loader,valid_loader,hidden_size_list, bidirectional_list, nlayers_dropout_list, train_criteria, test_criteria, results_filename,EMBEDDING_DIM,device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'), PLOT=False,N_EPOCHS=20,PATIENCE=3):
   dev_cpu = torch.device('cpu')
 

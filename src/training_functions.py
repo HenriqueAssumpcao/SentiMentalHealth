@@ -21,7 +21,7 @@ def load_df(distilbert_filtered_posts_filename, max_length=MAX_THREAD_LEN):
 
   post_df.features = post_df.apply(
       lambda p:torch.Tensor(np.hstack(
-        (np.vstack(p.features[:min(max_length,p.seq_len-1)]).astype(np.float16),
+        (np.vstack(p.features[:min(max_length,p.seq_len-1)]),
          np.array(p.score[:min(max_length,p.seq_len-1)]).reshape(-1,1),
          np.array(p.is_post_author[:min(max_length,p.seq_len-1)]).reshape(-1,1))
       )), axis=1)

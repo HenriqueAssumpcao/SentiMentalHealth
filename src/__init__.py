@@ -1,4 +1,3 @@
-from . import linear
 from . import models 
 from . import pytorchtools 
 from . import utils 

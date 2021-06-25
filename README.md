@@ -43,7 +43,7 @@ SentiMentalHealth/
 └── scraper.py
 └── requirements.txt
 ```
-   *All* of the notebooks check if the directory follows the correct structure, and otherwise create the required files, so if you are using the code according to this guide your file structure will be correct.
+   *All* of the notebooks already check if the root directory follows the correct structure, and otherwise create the required files, so if you are using the code according to this guide your file structure will be correct.
    
 2. Install all of the requirements:
 ```

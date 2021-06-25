@@ -29,7 +29,7 @@ The [Source](src) folder contains the .py files with useful functions and, most 
 
 ### First steps
 For correct usage of the code in this repository, follow these two simple steps:
-1. Assert that your file structure is as follows:
+1. The following is a description of the correct file structure for the repository files.
 ```
 SentiMentalHealth/
 └── src/
@@ -42,8 +42,9 @@ SentiMentalHealth/
 └── REVIEW_EXPERIMENTS.ipynb
 └── scraper.py
 └── requirements.txt
-
 ```
+   *All* of the notebooks check if the directory follows the correct structure, and otherwise create the required files, so if you are using the code according to this guide your file structure will be correct.
+   
 2. Install all of the requirements:
 ```
 pip install -r requirements.txt

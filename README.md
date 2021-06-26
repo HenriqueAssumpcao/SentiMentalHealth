@@ -67,7 +67,7 @@ The main goal of this repository is reproducibility, and so we succinctly descri
 There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch
 3. Run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook. Unfortunately, since we first obtained the results, Google Colab has reduced the amount of available RAM for free users, and so training the model for all 4 subreddits is not currently possible in the free version of Colab. For this reason, we recommend running this notebook locally, on a machine with GPU support and more than 14GB of RAM. 
-#### Option 2: Loading pre-trained parameters (TODO)
+#### Option 2: Loading pre-trained parameters 
 3. Download the pre-trained parameters pickle file from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EWGOcs3FyxJGqLnmU8lKwBYBpjsAgfSk7DfGt1me4MGNiQ?e=ge8kkB) and then run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook in testing mode, i.e., set the variables ```TEST = True``` and ```TRAIN = False```.
 
 Do NOT forget to maintain the directory structure of the zip file, i.e., keep the .pkl file in the 'results' directory.

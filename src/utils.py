@@ -166,24 +166,6 @@ def train_over_nepochs(model, train_loader, valid_loader, criterion, device, pat
 
   return model, best_valid_loss, epoch_time_list
 
-# def createTensorDataset(src, src_len_series, y, tgt=None, max_length=None, thread_set=None):
-#   if thread_set is not None:
-#     is_in_set = src_len_series.index.isin(thread_set) # np.bool [len(post_df)]
-#     index = torch.LongTensor(np.nonzero(is_in_set)).squeeze(0) # LongTensor [len(set_threads)]
-#   else:
-#     index = torch.arange(len(src_len_series), dtype=torch.long)
-
-#   src_len = torch.LongTensor(src_len_series)
-#   if max_length is not None:
-#     src_len[src_len > max_length] = max_length
-#   max_observed_len = src_len[index].max()
-
-#   if tgt is not None:
-#     print('adding tgt')
-#     return TensorDataset(src[index,:max_observed_len], src_len[index], tgt[index], y[index], index)
-#   else:
-#     return TensorDataset(src[index,:max_observed_len], src_len[index], y[index], index)
-
 def createTensorDataset(src, src_len_series, y, max_length=None):
 
   src_len = torch.LongTensor(src_len_series)
@@ -284,47 +266,6 @@ def getNonOverlappingThreads(post_df):
   return tmp_series
 
 
-# def getNonOverlappingThreads(post_df, comment_df):
-#   # create a groupby of authors containing their post/comment activities sorted by timestamp
-#   sub_post_df = post_df[['author','created_utc']].copy()
-#   sub_post_df['link_id'] = 'self'
-#   sub_comment_df = comment_df.loc[comment_df.is_post_author,['author','created_utc','link_id']]
-#   activity_df = pd.concat([sub_post_df, sub_comment_df]).sort_values('created_utc')
-#   #activity_df.head()
-
-#   grouped = activity_df.groupby('author', sort=False)
-#   post2seqlen = []
-#   for name, group in grouped:
-#     last_post = None
-#     last_comment = None
-#     #print('XXXXXX begin of author {}'.format(name))
-#     for index, row in group.iterrows():
-#       #print(index, row.link_id)
-#       if row.link_id == 'self': # beginning of new thread sequence
-#         if (last_post is not None) & (last_comment is not None): # wrapping up old sequence
-#           post2seqlen.append((last_post, list(post_df.loc[last_post,'comments']).index(last_comment)+1))
-#           #print('# wrapping up old sequence {} at {} (len: {})\n\n'.format(last_post, last_comment, post2seqlen[-1][1]))
-#         #print('# beginning of new thread sequence', index)
-#         last_post = index
-#         last_comment = None
-#       else: # continuing one of the previous thread sequences
-#         if row.link_id == last_post: # continuing last thread
-#           #print('# continuing last thread', last_post)
-#           last_comment = index
-#         else:
-#           #print('# last thread finished unexpectedly, wait until next one begins', row.link_id)
-#           if (last_post is not None) & (last_comment is not None): # finished last thread unexpectedly, wrap up and wait until next one begins
-#             post2seqlen.append((last_post, list(post_df.loc[last_post,'comments']).index(last_comment)+1))
-#             #print('# wrapping up old sequence {} at {} (len: {})\n\n'.format(last_post, last_comment, post2seqlen[-1][1]))
-#           last_post = None
-#     if (last_post is not None) & (last_comment is not None): # wrapping up old sequence
-#       post2seqlen.append((last_post, list(post_df.loc[last_post,'comments']).index(last_comment)+1))
-#       #print('# wrapping up old sequence {} at {} (len: {})\n\n'.format(last_post, last_comment, post2seqlen[-1][1]))
-#     #print('XXXXXX end of author {}\n\n'.format(name))
-  
-#   tmp_df = pd.Series(dict(post2seqlen), name='num_comments', dtype=int)
-#   return tmp_df
-
 # right now, we just use threads that have comments from author AND from others
 def getThreadLen(post, comment_df):
   postid = post.name
@@ -350,14 +291,6 @@ def areIntervalsShort(post, seqlen_series):
     timedeltas = timestamps[1:] - timestamps[:-1]
     return np.all(timedeltas < timedelta(days=1))#.total_seconds())
 
-
-# def areIntervalsShort(post, comment_df, seqlen_series):
-#   postid = post.name
-#   if postid in seqlen_series.index:
-#     seqlen = seqlen_series.loc[postid]
-#     timestamps = np.array([comment_df.loc[comment,'created_utc'] for comment in post.comments[:int(seqlen)]])
-#     timedeltas = timestamps[1:] - timestamps[:-1]
-#     return np.all(timedeltas < timedelta(days=1))
 
 def extractFeatures(df, tokenizer, model, device, batch_size = 1024, max_paragraph_length=256):
   n = len(df)
@@ -447,3 +380,10 @@ class RedditDataset(Dataset):
     sample = {'X_b': X_b, 'X_t': X_t, 'b_len':b_len, 't_len':t_len, 'y':y, 'ID': post_id}
     #sample = [X_b, X_t, b_len, t_len, y, post_id]
     return sample
+
+def compute_error(results_df, pred_column_name, criteria, device):
+  return {criterion.__class__.__name__.split('.')[-1]:
+          float(criterion(
+              torch.Tensor(results_df[pred_column_name].values).to(device),
+              torch.Tensor(results_df['final score'].values).to(device))
+          ) for criterion in criteria}

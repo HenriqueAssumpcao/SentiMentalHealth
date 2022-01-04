@@ -53,14 +53,14 @@ pip install -r requirements.txt
 The main goal of this repository is reproducibility, and so we succinctly describe the pipeline one should follow to reproduce our results.
 1. Run the [REDDIT_SCRAPPER](REDDIT_SCRAPPER.ipynb) notebook. We recommend running this locally, since Google Colab doesn't handle asynchronous functions all that well. This can take a while since subreddits like r/depression contain a significant amount of threads.
 
-    *Alternatively*, you can download the compressed dataset files from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EfMxFHP06HVMtxgii7xlSfYBNVLa972FC8rdpFBaGgpKOQ?e=GtuXEY).
+    *Alternatively*, you can download the compressed dataset files from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EfMxFHP06HVMtxgii7xlSfYBxPkXr9eIXrmnIQLkp-3I-A?e=LphyOv).
 
     Do NOT forget to maintain the directory structure of the zip file, i.e., keep all the .pkl files in the 'data' directory.
 
 
 2. Run the [PRE_PROCESSING](PRE_PROCESSING.ipynb) notebook. We recommend running this on colab, since it requires TPU support. This will also take a while since obtaining the VADER sentiment scores is a costly task.
 
-    *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EQcbKtFvQOdKnlGUVkHjiS0BLUiOydL4PhhYZZYU6-cdNw?e=vsLoYp).
+    *Alternatively*, you can skip Step 1 and 2 entirely and download the preprocessed data (parquet format) from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EQcbKtFvQOdKnlGUVkHjiS0BgMpvQu-3cC_q1FGOIgl4wA?e=iM4wx1).
 
     Do NOT forget to maintain the directory structure of the zip file, i.e., keep all the .pkl files in the 'data' directory, and to configure the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook accordingly, i.e., set ```EXTENSION = ".parquet"```.
 
@@ -68,7 +68,7 @@ There are two options for the final step of the pipeline.
 #### Option 1: Training the model from Scratch
 3. Run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook. Unfortunately, since we first obtained the results, Google Colab has reduced the amount of available RAM for free users, and so training the model for all 4 subreddits is not currently possible in the free version of Colab. For this reason, we recommend running this notebook locally, on a machine with GPU support and more than 14GB of RAM. 
 #### Option 2: Loading pre-trained parameters 
-3. Download the pre-trained parameters pickle file from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EWGOcs3FyxJGqLnmU8lKwBYBpjsAgfSk7DfGt1me4MGNiQ?e=ge8kkB) and then run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook in testing mode, i.e., set the variables ```TEST = True``` and ```TRAIN = False```.
+3. Download the pre-trained parameters pickle file from the authors' OneCloud drive [here](https://ufmgbr-my.sharepoint.com/:u:/g/personal/henriquesas2020_ufmg_br/EWGOcs3FyxJGqLnmU8lKwBYBPdK1tD1BC1RDzwpxqu4P1g?e=y6MedU) and then run the [PAPER_RESULTS](PAPER_RESULTS.ipynb) notebook in testing mode, i.e., set the variables ```TEST = True``` and ```TRAIN = False```.
 
 Do NOT forget to maintain the directory structure of the zip file, i.e., keep the .pkl file in the 'results' directory.
 

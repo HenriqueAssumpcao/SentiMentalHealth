@@ -87,4 +87,21 @@ This software is under GNU General Public License Version 3 ([GPLv3](LICENSE)).
 ## Authors
 Bárbara Silveira, Henrique S. A. Silva, Fabricio Murai, Ana Paula C. da Silva
 
+### Cite the Paper (BibTeX)
+```
+@article{SILVEIRA2021641,
+title = {Predicting user emotional tone in mental disorder online communities},
+journal = {Future Generation Computer Systems},
+volume = {125},
+pages = {641-651},
+year = {2021},
+issn = {0167-739X},
+doi = {https://doi.org/10.1016/j.future.2021.07.014},
+url = {https://www.sciencedirect.com/science/article/pii/S0167739X21002764},
+author = {Bárbara Silveira and Henrique S. Silva and Fabricio Murai and Ana Paula C. {da Silva}},
+keywords = {Emotional tone, Sentiment analysis, Mental health disorders, Reddit, Online communities, Emotional tone prediction},
+abstract = {In recent years, Online Social Networks have become an important medium for people who suffer from mental disorders to share moments of hardship, and receive emotional and informational support. In this work, we analyze how discussions in Reddit communities related to mental disorders can help improve the health conditions of their users. Using the emotional tone of users’ writing as a proxy for emotional state, we uncover relationships between user interactions and state changes. First, we observe that authors of negative posts often write rosier comments after engaging in discussions, indicating that users’ emotional state can improve due to social support. Second, we build models based on SOTA text embedding techniques and RNNs to predict shifts in emotional tone. This differs from most of related work, which focuses primarily on detecting mental disorders from user activity. We demonstrate the feasibility of accurately predicting the users’ reactions to the interactions experienced in these platforms, and present some examples which illustrate that the models are correctly capturing the effects of comments on the author’s emotional tone. Our models hold promising implications for interventions to provide support for people struggling with mental illnesses.}
+}
+```
+
 <img align="left" width="auto" height="75" src="./assets/ufmg.png">
